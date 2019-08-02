@@ -1,3 +1,5 @@
+console.log("Step 2");
+
 module.exports = function(sequelize, DataTypes) {
     var likes = sequelize.define("likes", {
       L_Email: DataTypes.STRING,

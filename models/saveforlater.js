@@ -1,3 +1,5 @@
+console.log("Step 3");
+
 module.exports = function(sequelize, DataTypes) {
     var saveforlater = sequelize.define("saveforlater", {
       S_Email:        DataTypes.STRING,
