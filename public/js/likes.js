@@ -31,7 +31,7 @@ $(document).ready(function() {
   
     // This function grabs users from the database and updates the view
     function getLikes() {
-      $.get("/api/likes", function(data) {
+      $.get("/api/like", function(data) {
         likes = data;
         initializeRows();
       });
@@ -43,7 +43,7 @@ $(document).ready(function() {
       var id = $(this).data("S_Email");
       $.ajax({
         method: "DELETE",
-        url: "/api/likes/" + S_Email
+        url: "/api/like/" + S_Email
       }).then(getLikes);
     }
   
@@ -71,7 +71,7 @@ $(document).ready(function() {
     function updateLikes(likes) {
       $.ajax({
         method: "PUT",
-        url: "/api/likes",
+        url: "/api/like",
         data: likes
       }).then(getLikes);
     }
@@ -121,7 +121,7 @@ $(document).ready(function() {
            text: $newItemInput.val().trim() 
         };
 
-        $.post("/api/likes", likes, getLikes);
+        $.post("/api/like", likes, getLikes);
         $newItemInput.val("");
       }
   });
