@@ -9,7 +9,7 @@ console.log("Running api-users.js");
 // =============================================================
 
 // Requiring our Todo model
-var db = require("../models/index(old)");
+var db = require("../models");
 
 // Routes
 // =============================================================
