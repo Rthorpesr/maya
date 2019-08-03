@@ -4,9 +4,6 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
-
-console.log("Step 1");
-
 var express = require("express");
 
 // Sets up the Express App
@@ -26,9 +23,7 @@ app.use(express.static("public"));
 
 // Routes
 // =============================================================
-
-console.log("inside the server.js requiring the routes.js");
-require("./router/routes/api-routes")(app);
+require("./routes/api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
@@ -37,5 +32,3 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
-
-console.log("exiting server.js");
