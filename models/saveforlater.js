@@ -6,7 +6,9 @@ module.exports = function(sequelize, DataTypes) {
       S_title:        DataTypes.STRING,
       S_source_url:   DataTypes.STRING,   
       S_image_url:    DataTypes.STRING,   
-      S_userEmail:    DataTypes.STRING           
+      S_userEmail:    DataTypes.STRING,
+      updated_at:  DataTypes.DATE,
+      deleted_at: DataTypes.DATE           
     });
     return saveforlater;
   };

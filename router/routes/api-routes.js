@@ -9,16 +9,20 @@
 
 console.log("Step 5");
 
-var db = require("../models");
+var db = require("../../models/index2");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
+  //GET  route for INDEX PAGE
+  app.get('/',(req, res) => res.send('INDEX'));
+
   // GET route for getting all of the users
   app.get("/api/users", function(req, res) {
 
-  });
+});
+
 
   // POST route for saving a new users. You can create a users using the data on req.body
   app.post("/api/users", function(req, res) {
