@@ -1,3 +1,6 @@
+console.log("running server.js");
+
+
 // *****************************************************************************
 // Server.js - This file is the initial starting point for the Node/Express server.
 //
