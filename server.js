@@ -27,9 +27,9 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 //require("./routes/api-routes.js")(app);
-require("./routes/api-recipe")(app);
-//require("./routes/api-likes")(app);
-//require("./routes/api-saveforlater")(app);
+require("./routes/api-users")(app);
+require("./routes/api-likes")(app);
+require("./routes/api-saveforlater")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {

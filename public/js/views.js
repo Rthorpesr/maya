@@ -31,8 +31,8 @@ $(document).ready(function() {
   
     // This function grabs users from the database and updates the view
     function getRecipes() {
-      $.get("/api/users", function(data) {
-        recipe = data;
+      $.get("/api/recipes", function(data) {
+        recipes = data;
         initializeRows();
       });
     }
@@ -43,7 +43,7 @@ $(document).ready(function() {
       var id = $(this).data("user_Email");
       $.ajax({
         method: "DELETE",
-        url: "/api/recipe/" + user_Email
+        url: "/api/recipes/" + user_Email
       }).then(getRecipe);
     }
   
@@ -71,8 +71,8 @@ $(document).ready(function() {
     function updateRecipes(recipe) {
       $.ajax({
         method: "PUT",
-        url: "/api/recipe",
-        data: user
+        url: "/api/recipes",
+        data: recipes
       }).then(getRecipes);
     }
   
@@ -116,19 +116,19 @@ $(document).ready(function() {
     function insertRecipe(event) 
       {
         event.preventDefault();
-        var recipe = 
+        var recipes = 
         {
            text: $newItemInput.val().trim(),
            //user_Email:    DataTypes.STRING,
-           L_title:       Spagetti,
-           L_source_url:  sourceurl,
-           L_image_url:   imageurl,
-           S_title:       Pizza,
-           S_source_url:  pizzahuturl,
-           S_image_url:   pictureurl
+           L_title:       "title",
+           L_source_url:  "sourceurl",
+           L_image_url:   "imageurl",
+           S_title:       "title",
+           S_source_url:  "pizzahuturl",
+           S_image_url:   "pictureurl"
         };
 
-        $.post("/api/recipe", recipe, getRecipes);
+        $.post("/api/recipes", recipes, getRecipes);
         $newItemInput.val("");
       }
   });
