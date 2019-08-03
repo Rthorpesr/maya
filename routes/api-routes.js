@@ -18,9 +18,9 @@ module.exports = function(app) {
   // GET route for getting all of the todos
   app.get("/api/users", function(req, res) {
     // findAll returns all entries for a table when used with no options
-    db.Todo.findAll({}).then(function(dbTodo) {
+    db.users.findAll({}).then(function(dbusers) {
       // We have access to the todos as an argument inside of the callback function
-      res.json(dbTodo);
+      res.json(dbusers);
     });
   });
 
@@ -30,11 +30,11 @@ module.exports = function(app) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
-    db.Todo.create({
-      user_Email: req.body.text
-    }).then(function(dbTodo) {
+    db.users.create({
+      userEmail: req.body.text
+    }).then(function(dbusers) {
       // We have access to the new todo as an argument inside of the callback function
-      res.json(dbTodo);
+      res.json(dbusers);
     });
   });
 

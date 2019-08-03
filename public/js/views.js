@@ -104,7 +104,7 @@ $(document).ready(function() {
       $newInputRow.find("button.delete").data("userEmail", user.userEmail);
       $newInputRow.find("input.edit").css("display", "none");
       $newInputRow.data("user", user);
-      if (todo.complete) {
+      if (user.complete) {
         $newInputRow.find("span").css("text-decoration", "line-through");
       }
       return $newInputRow;
