@@ -11,13 +11,13 @@ module.exports = (app, db) => {
   });
 
   // GET one owner by id
-  app.get('/owner/:id', (req, res) => {
+  app.get('/users/:id', (req, res) => {
     const id = req.params.id;
     db.users.find({
       where: { id: id}
     })
-      .then(owner => {
-        res.json(owner);
+      .then(users => {
+        res.json(users);
       });
   });
 
@@ -29,8 +29,8 @@ module.exports = (app, db) => {
       name: name,
       role: role
     })
-      .then(newOwner => {
-        res.json(newOwner);
+      .then(newusers => {
+        res.json(newusers);
       })
   });
 

@@ -9,14 +9,15 @@
 
 console.log("Step 5");
 
-var db = require("../../models/index2");
+var db = require(""),
+var db = require();
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
   //GET  route for INDEX PAGE
-  app.get('/',(req, res) => res.send('INDEX'));
+ app.get('/',(req, res) => res.send('INDEX'));
 
   // GET route for getting all of the users
   app.get("/api/users", function(req, res) {

@@ -28,7 +28,7 @@ app.use(express.static("public"));
 // =============================================================
 
 console.log("inside the server.js requiring the routes.js");
-require("./routes/api-routes.js")(app);
+require("./router/routes/api-routes")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
