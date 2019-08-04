@@ -2,7 +2,7 @@ $(document).ready(function() {
   
   // The below is for demostration only 
   signonUserEmail  =  "Reginald.ThorpeGranddad@verizon.net";
-  current_user     =  signonUserEmail;
+
 
   // Place these calls to the functions in the your jQuery code where you want  
   // to Post to the database. Each function has to pass the variable or object 
@@ -38,7 +38,7 @@ $(document).ready(function() {
           {
             event.preventDefault();
 
-            // POST route for saving a new like
+            // POST route for saving a new svlater
             $.post("/api/svlater");
             console.log("Posting svlaters");
           };

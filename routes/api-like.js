@@ -15,15 +15,6 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the Likes
-  app.get("/api/like", function(req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.likes.findAll({}).then(function(dblikes) {
-      // We have access to the Likes as an argument inside of the callback function
-      res.json(dblikes);
-    });
-  });
-
   // POST route for saving a new like
   app.post("/api/like", function(req, res) 
     {
