@@ -15,15 +15,6 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the svlater recs
-  app.get("/api/svlater", function(req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.svlaters.findAll({}).then(function(dbsvlaters) {
-      // We have access to the svlater as an argument inside of the callback function
-      res.json(dbsvlaters);
-    });
-  });
-
   // POST route for saving a new like
   app.post("/api/svlater", function(req, res) 
     {
@@ -42,16 +33,5 @@ module.exports = function(app) {
           // We have access to the new svlaters as an argument inside of the callback function
           res.json(dbsvlaters);
         });
-    });
-
-  // DELETE route for deleting svlaters. We can get the id of the svlater we want to delete from
-  // req.params.id
-  app.delete("/api/svlater/:SVL_Email", function(req, res) {
-
-  });
-
-  // PUT route for updating svlaters. We can get the updated svlater from req.body
-  app.put("/api/svlater", function(req, res) {
-
-  });
+    }); 
 };

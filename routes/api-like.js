@@ -43,15 +43,4 @@ module.exports = function(app) {
           res.json(dblikes);
         });
     });
-
-  // DELETE route for deleting Likes. We can get the id of the Like we want to delete from
-  // req.params.id
-  app.delete("/api/like/:S_Email", function(req, res) {
-
-  });
-
-  // PUT route for updating Likes. We can get the updated Like from req.body
-  app.put("/api/like", function(req, res) {
-
-  });
 };

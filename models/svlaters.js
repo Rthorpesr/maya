@@ -1,4 +1,4 @@
-console.log("Inside saveforlater.js (Model)");
+console.log("Inside svlater.js (Model)");
 
 
 module.exports = function(sequelize, DataTypes) {
