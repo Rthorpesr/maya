@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   // Getting users from database when page loads
   getSvlaters();
-
+  
   // This function resets the users displayed with new users from the database
   function initializeRows() {
     $userContainer.empty();
@@ -26,7 +26,7 @@ $(document).ready(function() {
   }
 
   // This function grabs users from the database and updates the view
-  function getLikes() {
+  function getSvlaters() {
     $.get("/api/svlater", function(data) {
       likes = data;
       initializeRows();
