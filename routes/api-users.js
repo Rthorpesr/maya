@@ -8,23 +8,23 @@ console.log("Running api-users.js");
 // Dependencies
 // =============================================================
 
-// Requiring our Todo model
+// Requiring our user model
 var db = require("../models");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the todos
+  // GET route for getting all of the users
   app.get("/api/users", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.users.findAll({}).then(function(dbusers) {
-      // We have access to the todos as an argument inside of the callback function
+      // We have access to the users as an argument inside of the callback function
       res.json(dbusers);
     });
   });
 
-  // POST route for saving a new todo
+  // POST route for saving a new user
   app.post("/api/users", function(req, res) {
     console.log(req.body);
     // create takes an argument of an object describing the item we want to
@@ -33,18 +33,18 @@ module.exports = function(app) {
     db.users.create({
       userEmail: req.body.text
     }).then(function(dbusers) {
-      // We have access to the new todo as an argument inside of the callback function
+      // We have access to the new user as an argument inside of the callback function
       res.json(dbusers);
     });
   });
 
-  // DELETE route for deleting todos. We can get the id of the todo we want to delete from
+  // DELETE route for deleting users. We can get the id of the user we want to delete from
   // req.params.id
   app.delete("/api/user/:user_Email", function(req, res) {
 
   });
 
-  // PUT route for updating todos. We can get the updated todo from req.body
+  // PUT route for updating users. We can get the updated user from req.body
   app.put("/api/user", function(req, res) {
 
   });

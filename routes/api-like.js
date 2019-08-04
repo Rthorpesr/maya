@@ -8,18 +8,18 @@ console.log("Running api-like.js");
 // Dependencies
 // =============================================================
 
-// Requiring our Todo model
+// Requiring our Like model
 var db = require("../models");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the todos
+  // GET route for getting all of the Likes
   app.get("/api/like", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.likes.findAll({}).then(function(dblikes) {
-      // We have access to the todos as an argument inside of the callback function
+      // We have access to the Likes as an argument inside of the callback function
       res.json(dblikes);
     });
   });
@@ -39,18 +39,18 @@ module.exports = function(app) {
           L_Email:      "john.doe@verizon.net"
         }).then(function(dblikes) 
         {
-          // We have access to the new todo as an argument inside of the callback function
+          // We have access to the new Like as an argument inside of the callback function
           res.json(dblikes);
         });
     });
 
-  // DELETE route for deleting todos. We can get the id of the todo we want to delete from
+  // DELETE route for deleting Likes. We can get the id of the Like we want to delete from
   // req.params.id
   app.delete("/api/like/:S_Email", function(req, res) {
 
   });
 
-  // PUT route for updating todos. We can get the updated todo from req.body
+  // PUT route for updating Likes. We can get the updated Like from req.body
   app.put("/api/like", function(req, res) {
 
   });

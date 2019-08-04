@@ -8,18 +8,18 @@ console.log("Running api-svlater.js");
 // Dependencies
 // =============================================================
 
-// Requiring our Todo model
+// Requiring our svlater model
 var db = require("../models");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the todos
+  // GET route for getting all of the svlater recs
   app.get("/api/svlater", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.svlaters.findAll({}).then(function(dbsvlaters) {
-      // We have access to the todos as an argument inside of the callback function
+      // We have access to the svlater as an argument inside of the callback function
       res.json(dbsvlaters);
     });
   });
@@ -39,18 +39,18 @@ module.exports = function(app) {
           SVL_Email:      "john.doe@verizon.net"
         }).then(function(dbsvlaters) 
         {
-          // We have access to the new todo as an argument inside of the callback function
+          // We have access to the new svlaters as an argument inside of the callback function
           res.json(dbsvlaters);
         });
     });
 
-  // DELETE route for deleting todos. We can get the id of the todo we want to delete from
+  // DELETE route for deleting svlaters. We can get the id of the svlater we want to delete from
   // req.params.id
   app.delete("/api/svlater/:SVL_Email", function(req, res) {
 
   });
 
-  // PUT route for updating todos. We can get the updated todo from req.body
+  // PUT route for updating svlaters. We can get the updated svlater from req.body
   app.put("/api/svlater", function(req, res) {
 
   });
