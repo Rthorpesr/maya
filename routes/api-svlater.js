@@ -1,4 +1,4 @@
-console.log("Running api-like.js");
+console.log("Running api-svlater.js");
 
 
 // *********************************************************************************
@@ -16,42 +16,42 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the todos
-  app.get("/api/like", function(req, res) {
+  app.get("/api/svlater", function(req, res) {
     // findAll returns all entries for a table when used with no options
-    db.likes.findAll({}).then(function(dblikes) {
+    db.svlaters.findAll({}).then(function(dbsvlaters) {
       // We have access to the todos as an argument inside of the callback function
-      res.json(dblikes);
+      res.json(dbsvlaters);
     });
   });
 
   // POST route for saving a new like
-  app.post("/api/like", function(req, res) 
+  app.post("/api/svlater", function(req, res) 
     {
         console.log(req.body);
         // create takes an argument of an object describing the item we want to
         // insert into our table. In this case we just we pass in an object with a text
         // and complete property (req.body)
-        db.likes.create
+        db.svlaters.create
         ({
-          L_title:      "likeSearch.title", 
-          L_source_url:  "likeSearch.sourceurl",
-          L_image_url:   "likeSearch.imageurl",
-          L_Email:      "john.doe@verizon.net"
-        }).then(function(dblikes) 
+          SVL_title:      "laterSearch.title", 
+          SVL_source_url:  "laterSearch.sourceurl",
+          SVL_image_url:   "laterSearch.imageurl",
+          SVL_Email:      "john.doe@verizon.net"
+        }).then(function(dbsvlaters) 
         {
           // We have access to the new todo as an argument inside of the callback function
-          res.json(dblikes);
+          res.json(dbsvlaters);
         });
     });
 
   // DELETE route for deleting todos. We can get the id of the todo we want to delete from
   // req.params.id
-  app.delete("/api/like/:S_Email", function(req, res) {
+  app.delete("/api/svlater/:SVL_Email", function(req, res) {
 
   });
 
   // PUT route for updating todos. We can get the updated todo from req.body
-  app.put("/api/like", function(req, res) {
+  app.put("/api/svlater", function(req, res) {
 
   });
 };
