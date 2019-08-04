@@ -8,7 +8,7 @@ console.log("Running api-like.js");
 // Dependencies
 // =============================================================
 
-// Requiring our Like model
+// Requiring our svlater model
 var db = require("../models");
 
 // Routes
@@ -30,8 +30,8 @@ module.exports = function(app) {
           L_Email:      "john.doe@verizon.net"
         }).then(function(dblikes) 
         {
-          // We have access to the new Like as an argument inside of the callback function
+          // We have access to the new svlaters as an argument inside of the callback function
           res.json(dblikes);
         });
-    });
+    }); 
 };

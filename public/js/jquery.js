@@ -27,7 +27,6 @@ $(document).ready(function() {
         function likeposted() 
           {
             event.preventDefault();
-
             // POST route for saving a new like
             $.post("/api/like");
             console.log("Posting likes");
@@ -37,7 +36,6 @@ $(document).ready(function() {
         function svlaterposted() 
           {
             event.preventDefault();
-
             // POST route for saving a new svlater
             $.post("/api/svlater");
             console.log("Posting svlaters");
