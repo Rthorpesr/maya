@@ -30,15 +30,11 @@ module.exports = function(app) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
-    db.users.create({
-      S_title:       req.body.text,
-      S_source_url:  req.body.text,
-      S_image_url:   req.body.text,
-      S_Email:       req.body.text
-       
-    }).then(function(dblike) {
+    db.likes.create({
+      L_Email: req.body.text
+    }).then(function(dblikes) {
       // We have access to the new todo as an argument inside of the callback function
-      res.json(dblike);
+      res.json(dblikes);
     });
   });
 

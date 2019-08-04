@@ -18,9 +18,9 @@ module.exports = function(app) {
   // GET route for getting all of the todos
   app.get("/api/saveforlater", function(req, res) {
     // findAll returns all entries for a table when used with no options
-    db.saveforlater.findAll({}).then(function(dbsaveforlater) {
+    db.saveforlater.findAll({}).then(function(dbsaveforlaters) {
       // We have access to the todos as an argument inside of the callback function
-      res.json(dbsaveforlater);
+      res.json(dbsaveforlaters);
     });
   });
 
@@ -30,12 +30,8 @@ module.exports = function(app) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
-    db.users.create({
-      S_title:       req.body.text,
-      S_source_url:  req.body.text,
-      S_image_url:   req.body.text,
-      S_Email:       req.body.text
-       
+    db.saveForLaters.create({
+      S_Email: req.body.text    
     }).then(function(dbsaveforlater) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbsaveforlater);
